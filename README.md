@@ -1,33 +1,13 @@
 # Simple_Bootloader_on_Python
 
-## Version Alpha_1.0.1.8
-Minor changes. The start screen has been redesigned (the visual support for the user has been reconfigured), now it shows our logo as an asci image and now after the version the name of the author (me) and our company is displayed. Also, minor changes were made to the [Start.bat](https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Aplha%201.0.1.8/Start.bat) code to fix the console output.
-This can be considered a minor update, because only the functionality of correctly displaying the logo, the author and our company was added.
+## Version Alpha_1.0.0.1
 
-<img src=https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Aplha%201.0.1.8/Demo_Files/Console.gif>
+In this version, the basic code for the loading screen was written.
+<img src="https://github.com/NicknameRoot/Simple_Python_Bootloader/blob/gh-pages/version_aplha_1.0.0.1.gif?raw=true">
 
-## Version Alpha_1.0.1.7
+One third-party library was used in the form of [Link](https://github.com/Textualize/rich), to create a visually pleasing console interface.
 
-In this version, the part of the code responsible for recording logs of events that occurred during the code operation was written [Bootloader.py](https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.7/Bootloader.py)
-Now, if there is an error loading any script, it will be necessarily recorded in the log (also, absolutely all loader events are written to the log, regardless of the success of its operation)
-
-<img src=https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.7/Demo_Files/Logs.gif>
-
-and it will be located in the same directory as the main code [Bootloader.py](https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.7/Bootloader.py) in the main folder `Logs` there will be a subfolder automatically named by the current date in the format `%d-%m-%Y`, and in this folder there will be the log file `debug.log` itself.<br>
-
-**[A small technical correction that was not included at the time of filming, but was already fixed at the code level, namely, the date format was initially set to American `%m-%d-%Y` where the month goes before the number (which got to the shooting), then the format was corrected to European where we go to the usual location first the number then month and year `%d-%m-%Y'.]**
-
-<img src=https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.7/Demo_Files/File.gif>
-
-The internal contents of the log file `debug.log` are arranged so that each line is written in it at the very beginning using the format <br>
-`%d-%m-%Y%H:%M:%S` fixing the date with the time, after these mandatory data, all actions of the loader are already performed, including the launch of the loader itself, the launch status scripts from the configuration file [Config.cfg](https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.7/Config.cfg) well, there are also errors when running scripts.
-The contents of the log file after my tests (to demonstrate the operation of the logging script)
-```log
-[22-08-2024 20:13:21] Bootloader started.
-[22-08-2024 20:13:26] Loading new-bot.py
-[22-08-2024 20:13:26] new-bot.py loaded successfully
-[22-08-2024 20:13:26] test.c failed to load: Not a Python script.
-```
+In the internal structure of the code, it is planned to link to the configuration file and improve the functionality of the code.
 
 ## Version Alpha_1.0.1.5
 The main code and internal functions were written in this version
@@ -61,12 +41,31 @@ To demonstrate how it works, I added a `test.c` file to the configuration file t
 
 <img src=https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.5/Demo_Files/Error_Demo.gif>
 
-## Version Alpha_1.0.0.1
+## Version Alpha_1.0.1.7
 
-In this version, the basic code for the loading screen was written.
-<img src="https://github.com/NicknameRoot/Simple_Python_Bootloader/blob/gh-pages/version_aplha_1.0.0.1.gif?raw=true">
+In this version, the part of the code responsible for recording logs of events that occurred during the code operation was written [Bootloader.py](https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.7/Bootloader.py)
+Now, if there is an error loading any script, it will be necessarily recorded in the log (also, absolutely all loader events are written to the log, regardless of the success of its operation)
 
-One third-party library was used in the form of [Link](https://github.com/Textualize/rich), to create a visually pleasing console interface.
+<img src=https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.7/Demo_Files/Logs.gif>
 
-In the internal structure of the code, it is planned to link to the configuration file and improve the functionality of the code.
+and it will be located in the same directory as the main code [Bootloader.py](https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.7/Bootloader.py) in the main folder `Logs` there will be a subfolder automatically named by the current date in the format `%d-%m-%Y`, and in this folder there will be the log file `debug.log` itself.<br>
 
+**[A small technical correction that was not included at the time of filming, but was already fixed at the code level, namely, the date format was initially set to American `%m-%d-%Y` where the month goes before the number (which got to the shooting), then the format was corrected to European where we go to the usual location first the number then month and year `%d-%m-%Y'.]**
+
+<img src=https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.7/Demo_Files/File.gif>
+
+The internal contents of the log file `debug.log` are arranged so that each line is written in it at the very beginning using the format <br>
+`%d-%m-%Y%H:%M:%S` fixing the date with the time, after these mandatory data, all actions of the loader are already performed, including the launch of the loader itself, the launch status scripts from the configuration file [Config.cfg](https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Alpha_1.0.1.7/Config.cfg) well, there are also errors when running scripts.
+The contents of the log file after my tests (to demonstrate the operation of the logging script)
+```log
+[22-08-2024 20:13:21] Bootloader started.
+[22-08-2024 20:13:26] Loading new-bot.py
+[22-08-2024 20:13:26] new-bot.py loaded successfully
+[22-08-2024 20:13:26] test.c failed to load: Not a Python script.
+```
+
+## Version Alpha_1.0.1.8
+Minor changes. The start screen has been redesigned (the visual support for the user has been reconfigured), now it shows our logo as an asci image and now after the version the name of the author (me) and our company is displayed. Also, minor changes were made to the [Start.bat](https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Aplha%201.0.1.8/Start.bat) code to fix the console output.
+This can be considered a minor update, because only the functionality of correctly displaying the logo, the author and our company was added.
+
+<img src=https://github.com/NicknameRoot/Simple_Bootloader_on_Python/blob/gh-pages/Aplha%201.0.1.8/Demo_Files/Console.gif>
